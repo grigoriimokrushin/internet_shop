@@ -5,7 +5,7 @@ from catalog.models import Category
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        Category.objects.all = []
+        Category.objects.all().delete()
         categories_list = [
             {"name": "Для детей", "description": "То во что играют дети."},
             {"name": "Для рыбалки", "description": "То что берут на рыбалку."},
